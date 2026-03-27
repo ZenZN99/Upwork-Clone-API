@@ -1,7 +1,6 @@
 import { BACKEND_URL } from "./user.api";
 
 export const freezeBalanceByProposal = async (
-  token: string,
   proposalId: string,
 ) => {
   try {
@@ -9,9 +8,6 @@ export const freezeBalanceByProposal = async (
       `${BACKEND_URL}/api/transaction/freeze/${proposalId}`,
       {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
         credentials: "include",
       },
     );
